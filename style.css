@@ -1,0 +1,450 @@
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f6f6;
+            color: #050505;
+        }
+
+        .portfolio {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 38% 1fr;
+            grid-template-rows: 16% 1fr;
+            gap: 20px;
+            padding: 24px 4.5%;
+        }
+
+        .profile {
+            grid-column: 1;
+            grid-row: 1 / 3;
+            position: relative;
+            min-height: 0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .profile-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        .profile-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 650px;
+            overflow: hidden;
+            border-radius: 16px 16px 16px 16px;
+            background: #8585d0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            width: 58%;
+            aspect-ratio: 1;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            top: 12%;
+            left: 23%;
+        }
+
+        .profile-card::after {
+            content: "";
+            position: absolute;
+            width: 54%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #eaa5fa;
+            top: 14%;
+            left: 25%;
+        }
+
+        .profile-image {
+            position: absolute;
+            width: 78%;
+            height: 57%;
+            object-fit: contain;
+            object-position: center bottom;
+            left: 11%;
+            top: 7%;
+            z-index: 1;
+        }
+
+        .side-menu {
+            position: absolute;
+            left: -20px;
+            top: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 12px;
+        }
+
+        .profile-content {
+            position: absolute;
+            left: 24px;
+            bottom: 12%;
+            z-index: 2;
+        }
+
+        .intro {
+            color: #f1f1ff;
+            font-size: clamp(24px, 3vw, 40px);
+            font-weight: 300;
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+
+        .name {
+            color: #fff;
+            font-size: clamp(34px, 4.2vw, 55px);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        .email {
+            color: #fff;
+            font-size: 12px;
+            margin-top: 24px;
+        }
+
+        .profile-stamp {
+            position: absolute;
+            right: 8%;
+            bottom: 16%;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #111;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
+            line-height: 1.6;
+            transform: rotate(-15deg);
+            z-index: 2;
+        }
+
+        .main-content {
+            grid-column: 2;
+            grid-row: 1 / 3;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-rows: auto 1fr 0.72fr;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .page-title {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            font-size: clamp(48px, 7vw, 92px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -4px;
+            white-space: nowrap;
+        }
+
+        .feature {
+            grid-column: 1;
+            grid-row: 2;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #8bc9c6;
+            min-height: 220px;
+        }
+
+        .feature img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            padding-left: 4px;
+        }
+
+        .stats {
+            grid-column: 2;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 12px;
+            min-height: 220px;
+        }
+
+        .stat {
+            border-radius: 16px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-projects {
+            background: #a9d9d5;
+        }
+
+        .stat-awards {
+            background: #9070b9;
+            color: #fff;
+        }
+
+        .stat-number {
+            font-size: clamp(24px, 2.6vw, 36px);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .bottom-grid {
+            grid-column: 1 / 3;
+            grid-row: 3;
+            display: grid;
+            grid-template-columns: 0.8fr 1.5fr;
+            gap: 20px;
+            min-height: 180px;
+        }
+
+        .clients {
+            background: #595959;
+            border-radius: 16px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        .apple {
+            font-size: 44px;
+        }
+
+        .clients p {
+            font-size: 16px;
+        }
+
+        .award-card {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .artwork {
+            background: #050505;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .artwork img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .global-award {
+            background: #ffc76f;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .global-award strong {
+            font-size: clamp(24px, 3vw, 36px);
+            margin-bottom: 4px;
+        }
+
+        .global-award p {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        @media (min-width: 1500px) {
+            .portfolio {
+                padding: 32px 4%;
+                gap: 28px;
+            }
+
+            .main-content {
+                gap: 24px;
+            }
+
+            .profile-card {
+                min-height: 800px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .portfolio {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                padding: 24px;
+            }
+
+            .profile {
+                grid-column: 1;
+                grid-row: 1;
+                padding: 30px 0 0;
+            }
+
+            .profile-card {
+                min-height: 680px;
+            }
+
+            .side-menu {
+                left: 5px;
+            }
+
+            .main-content {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .page-title {
+                font-size: clamp(45px, 9vw, 80px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .portfolio {
+                padding: 16px;
+                gap: 24px;
+            }
+
+            .profile-card {
+                min-height: 580px;
+            }
+
+            .profile-content {
+                bottom: 10%;
+                left: 20px;
+            }
+
+            .profile-stamp {
+                width: 75px;
+                height: 75px;
+                font-size: 8px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr 0.7fr;
+                grid-template-rows: auto 200px 170px;
+                gap: 12px;
+            }
+
+            .page-title {
+                font-size: clamp(35px, 9vw, 55px);
+                letter-spacing: -2px;
+            }
+
+            .feature {
+                min-height: 0;
+            }
+
+            .stats {
+                min-height: 0;
+                gap: 8px;
+            }
+
+            .stat {
+                padding: 12px;
+            }
+
+            .stat-number {
+                font-size: 25px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+            }
+
+            .bottom-grid {
+                gap: 10px;
+                min-height: 170px;
+                grid-template-columns: 0.8fr 1.2fr;
+            }
+
+            .award-card {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .global-award {
+                padding: 12px;
+            }
+
+            .global-award strong {
+                font-size: 23px;
+            }
+
+            .global-award p {
+                font-size: 11px;
+            }
+
+            .apple {
+                font-size: 35px;
+            }
+
+            .clients p {
+                font-size: 12px;
+            }
+        }
